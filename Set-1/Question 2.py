@@ -29,8 +29,16 @@ CUSTID  NAME            PRICE   QTY    CID
 106     Sonal Aggarwal  20000   5      333
 107     Arjun Singh     50000   15     666
 """
+"""
+create table company(cid integer primary key, cname varchar(30), city varchar(30), pname varchar(30));
 
-
+insert into company values(111, "sony", "delhi", "tv"); 
+insert into company values(222, "nokia", "mumbai", "mobile");
+insert into company values(333, "onida", "delhi", "tv")
+insert into company values(444, "sony", "mumbai", "mobile");
+insert into company values(555, "blackberry", "madras", "mobile");
+insert into company values(666, "dell", "delhi", "laptop");
+"""
 # 1) To display those company name along with price which are having less than 30000.
 query1 = """
 SELECT COMPANY.CNAME, CUSTOMER.PRICE
