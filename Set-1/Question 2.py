@@ -61,3 +61,45 @@ FROM COMPANY
 JOIN CUSTOMER ON COMPANY.CID = CUSTOMER.CID
 WHERE COMPANY.PRODUCTNAME = 'MOBILE';
 """
+
+
+
+import mysql.connector
+
+# COMPANY
+"""
+CID     CNAME       CITY    PRODUCTNAME
+111     SONY        DELHI   TV
+222     NOKIA       MUMBAI  MOBILE
+333     ONIDA       DELHI   TV
+444     SONY        MUMBAI  MOBILE
+555     BLACKBERRY  MADRAS  MOBILE
+666     DELL        DELHI   LAPTOP
+"""
+"""
+# Connect to MySQL
+conn = mysql.connector.connect(
+    host="your_host",
+    user="your_username",
+    password="your_password",
+    database="your_database"
+)
+
+cursor = conn.cursor()
+
+# Create table
+create_table_query = """
+CREATE TABLE COMPANY (
+    CID INT PRIMARY KEY,
+    CNAME VARCHAR(50),
+    CITY VARCHAR(50),
+    PRODUCTNAME VARCHAR(50)
+);
+"""
+cursor.execute(create_table_query)
+
+# Commit changes and close connection
+conn.commit()
+cursor.close()
+conn.close()
+"""
