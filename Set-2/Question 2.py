@@ -20,11 +20,11 @@ insert into faculty values(107, "Niranjan", "Kumar", "1996-08-26", 16000);
 #Courses Table
 
 create table courses(C_ID varchar(30) primary key, F_ID integer, Cname varchar(50), Hire_date date, Fees integer);
-insert into courses values(C21, 102, "Grid Computing", 40000);
-insert into courses values(C22, 106, "System Design", 16000);
-insert into courses values(C23, 104, "Computer Security", 8000);
-insert into courses values(C24, 106, "Human Biology", 15000);
-insert into courses values(C25, 102, "Computer Networks", 20000);
-insert into courses values(C26, 105, "Visual Basic", 6000);
-insert into courses values(C27, 107, "Dreamweaver", 4000);
+insert into courses values("C21", 102, "Grid Computing", 40000);
+insert into courses values("C22", 106, "System Design", 16000);
+insert into courses values("C23", 104, "Computer Security", 8000);
+insert into courses values("C24", 106, "Human Biology", 15000);
+insert into courses values("C25", 102, "Computer Networks", 20000);
+insert into courses values("C26", 105, "Visual Basic", 6000);
+insert into courses values("C27", 107, "Dreamweaver", 4000);
 """
