@@ -38,6 +38,18 @@ insert into company values(333, "onida", "delhi", "tv")
 insert into company values(444, "sony", "mumbai", "mobile");
 insert into company values(555, "blackberry", "madras", "mobile");
 insert into company values(666, "dell", "delhi", "laptop");
+
+create table customer(custid integer primary key, name varchar(30), price integer, qty integer, cid integer);
+insert into company values(101, "Rohan Sharma", 70000, 20, 222); 
+insert into company values(102, "Deepak Kumar", 50000, 10, 666); 
+insert into company values(103, "Mohan Kumar", 30000, 5, 111); 
+insert into company values(104, "Sahil Bansal", 35000, 3, 333); 
+insert into company values(105, "Neha Soni", 25000, 7, 444); 
+insert into company values(106, "Sonal Aggarwal", 20000, 5, 333);
+insert into company values(107, "Arjun Singh", 50000, 15, 666);
+
+
+
 """
 # 1) To display those company name along with price which are having less than 30000.
 query1 = """
