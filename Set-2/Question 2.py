@@ -9,12 +9,13 @@ Display all records FACULTY table order by First Name of the faculty in descendi
 
 create table faculty(F_ID integer primary key, FNAME varchar(30), LNAME varchar(30), Hire_date date, Salary integer);
 
-insert into faculty values(102, "Amit", "Mishra", "12-10-1998", 12000); 
-insert into faculty values(103, "Nitin", "Vyas", "24-12-1994", 8000); 
-insert into faculty values(104, "Rakshit", "Soni", "18-05-2001", 14000); 
-insert into faculty values(105, "Rashmi", "Malhotra", "11-09-2004", 11000); 
-insert into faculty values(106, "Sulekha", "Shrivastava", "05-06-2006", 10000); 
-insert into faculty values(107, "Niranjan", "Kumar", "26-08-1996", 16000); 
+insert into faculty values(102, "Amit", "Mishra", "1998-10-12", 12000); 
+insert into faculty values(103, "Nitin", "Vyas", "1994-12-24", 8000); 
+insert into faculty values(104, "Rakshit", "Soni", "2001-05-18", 14000); 
+insert into faculty values(105, "Rashmi", "Malhotra", "2004-09-11", 11000); 
+insert into faculty values(106, "Sulekha", "Shrivastava", "2006-06-05", 10000); 
+insert into faculty values(107, "Niranjan", "Kumar", "1996-08-26", 16000); 
+
 
 #Courses Table
 
