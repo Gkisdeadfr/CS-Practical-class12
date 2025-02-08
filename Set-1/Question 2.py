@@ -53,7 +53,7 @@ insert into customer values(107, "Arjun Singh", 50000, 15, 666);
 
 
 """
-# 1) To display those company name along with price which are having less than 30000.
+# 1) To display those company name along with price which are having price less than 30000.
 query1 = """
 SELECT COMPANY.CNAME, CUSTOMER.PRICE
 FROM COMPANY
