@@ -1,4 +1,13 @@
 """
+1) To display the name of the teacher and their designation.
+2) To display the name and subjects of all female teachers.
+3) To display all details of all teachers including gender and designation.
+4) To display details of all HODs
+"""
+
+
+
+"""
 #Teacher Table
 
 create table teacher(code primary key,tname varchar(50),subject varchar(50),DOJ date, period integer, experience integer);
