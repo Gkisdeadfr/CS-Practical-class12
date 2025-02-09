@@ -28,7 +28,10 @@ insert into courses values("C25", 102, "Computer Networks", 20000);
 insert into courses values("C26", 105, "Visual Basic", 6000);
 insert into courses values("C27", 107, "Dreamweaver", 4000);
 """
+"""
+#ANSWERS
 i) select * from faculty where Hire_date> "2001-10-05";
 ii)Select F_ID, FNAME, Cname from faculty, courses group by F_ID having Fees> 15000;
 iii)Select count(distinct F_ID) from courses;
 iv)Select * from faculty order by FNAME DESC;
+"""
