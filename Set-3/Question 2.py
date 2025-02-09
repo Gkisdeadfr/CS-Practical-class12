@@ -29,7 +29,10 @@ insert into admin values(1123, "male", "Senior Teacher");
 insert into admin values(1215, "male", "HOD");
 insert into admin values(1167, "female", "Senior Teacher");
 """
+"""
+#ANSWERS
 i)Select tname, designation from teacher, admin group by code;
 ii)Select tname, subject from teacher, admin group by code having gender= "female";
 iii)Select * from teacher, admin group by code;
 iv)Select * from teacher, admin group by code having designation= "HOD";
+"""
