@@ -29,4 +29,5 @@ insert into courses values("C26", 105, "Visual Basic", 6000);
 insert into courses values("C27", 107, "Dreamweaver", 4000);
 """
 i) select * from faculty where Hire_date> "2001-10-05";
-ii)Select courses.F_ID, FNAME, Cname from faculty, courses where Fees> 15000;
+ii)Select F_ID, FNAME, Cname from faculty, courses group by F_ID having Fees> 15000;
+iii)Select count(distinct F_ID) from courses;
