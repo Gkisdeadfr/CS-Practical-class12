@@ -5,8 +5,6 @@
 4) To display details of all HODs
 """
 
-
-
 """
 #Teacher Table
 
