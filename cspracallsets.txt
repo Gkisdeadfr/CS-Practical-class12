@@ -1,0 +1,289 @@
+SET1
+
+1
+
+hostel_stack = []
+
+def add_hostel():
+    hostel_number = input("Enter Hostel Number: ")
+    total_students = int(input("Enter Total Students: "))
+    total_rooms = int(input("Enter Total Rooms: "))
+    hostel_record = (hostel_number, total_students, total_rooms)
+    hostel_stack.append(hostel_record)
+    print("Hostel record added successfully!")
+
+def delete_hostel():
+    if hostel_stack:
+        deleted_record = hostel_stack.pop()
+        print(f"Deleted Record: {deleted_record}")
+    else:
+        print("No records to delete!")
+
+def display_hostel():
+    if hostel_stack:
+        for record in hostel_stack:
+            print(f"Hostel Number: {record[0]}, Total Students: {record[1]}, Total Rooms: {record[2]}")
+    else:
+        print("No records to display!")
+
+while True:
+    print("\nHostel Management System")
+    print("1. Add Hostel Record")
+    print("2. Delete Hostel Record")
+    print("3. Display Hostel Records")
+    print("4. Exit")
+    choice = input("Enter your choice: ")
+
+    if choice == '1':
+        add_hostel()
+    elif choice == '2':
+        delete_hostel()
+    elif choice == '3':
+        display_hostel()
+    elif choice == '4':
+        break
+    else:
+        print("Invalid choice! Please try again.")
+
+2
+
+-- i) To display those company names along with price which are having price less than 30000.
+SELECT C.CNAME, CU.PRICE
+FROM COMPANY C
+JOIN CUSTOMER CU ON C.CID = CU.CID
+WHERE CU.PRICE < 30000;
+
+-- ii) To display the name and price of the companies whose price is between 20000 to 35000.
+SELECT C.CNAME, CU.PRICE
+FROM COMPANY C
+JOIN CUSTOMER CU ON C.CID = CU.CID
+WHERE CU.PRICE BETWEEN 20000 AND 35000;
+
+-- iii) To increase the price by 1000 for those customers whose name starts with ‘S’.
+UPDATE CUSTOMER
+SET PRICE = PRICE + 1000
+WHERE NAME LIKE 'S%';
+
+-- iv) To display those product name, city and price which are having product name as MOBILE.
+SELECT C.PRODUCTNAME, C.CITY, CU.PRICE
+FROM COMPANY C
+JOIN CUSTOMER CU ON C.CID = CU.CID
+WHERE C.PRODUCTNAME = 'MOBILE';
+
+
+SET2
+
+1
+
+def student_record(filename):
+    roll_no = input("Enter Roll No: ")
+    name = input("Enter Name: ")
+    address = input("Enter Address: ")
+    with open(filename, 'a') as file:
+        file.write(f"{roll_no},{name},{address}\n")
+    print("Student record added successfully!")
+
+def student_readdata(filename):
+    try:
+        with open(filename, 'r') as file:
+            for line in file:
+                roll_no, name, address = line.strip().split(',')
+                print(f"Roll No: {roll_no}, Name: {name}, Address: {address}")
+    except FileNotFoundError:
+        print("No records found!")
+
+def student_search(filename):
+    roll_no = input("Enter Roll No to search: ")
+    try:
+        with open(filename, 'r') as file:
+            found = False
+            for line in file:
+                r_no, name, address = line.strip().split(',')
+                if r_no == roll_no:
+                    print(f"Roll No: {r_no}, Name: {name}, Address: {address}")
+                    found = True
+                    break
+            if not found:
+                print("Student not found!")
+    except FileNotFoundError:
+        print("No records found!")
+
+filename = "student.txt"
+while True:
+    print("\nStudent Management System")
+    print("1. Add Student Record")
+    print("2. Display All Student Records")
+    print("3. Search Student by Roll No")
+    print("4. Exit")
+    choice = input("Enter your choice: ")
+
+    if choice == '1':
+        student_record(filename)
+    elif choice == '2':
+        student_readdata(filename)
+    elif choice == '3':
+        student_search(filename)
+    elif choice == '4':
+        break
+    else:
+        print("Invalid choice! Please try again.")
+
+2
+
+-- i) To display the Name of the Teacher and their designation.
+SELECT T.TNAME, A.DESIGNATION
+FROM TEACHER T
+JOIN ADMIN A ON T.CODE = A.CODE;
+
+-- ii) To display the Name and Subjects of all female Teachers.
+SELECT T.TNAME, T.SUBJECT
+FROM TEACHER T
+JOIN ADMIN A ON T.CODE = A.CODE
+WHERE A.GENDER = 'FEMALE';
+
+-- iii) To display all details of all teachers including Gender and Designation.
+SELECT T.*, A.GENDER, A.DESIGNATION
+FROM TEACHER T
+JOIN ADMIN A ON T.CODE = A.CODE;
+
+-- iv) To display details of all HODs.
+SELECT T.*, A.GENDER, A.DESIGNATION
+FROM TEACHER T
+JOIN ADMIN A ON T.CODE = A.CODE
+WHERE A.DESIGNATION = 'HOD';
+
+
+SET3
+
+1
+import csv
+
+def write_records(filename):
+    records = []
+    while True:
+        roll_no = input("Enter Roll No: ")
+        name = input("Enter Name: ")
+        address = input("Enter Address: ")
+        records.append([roll_no, name, address])
+        more = input("Do you want to add more records? (y/n): ")
+        if more.lower() != 'y':
+            break
+    with open(filename, 'w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerows(records)
+    print("Records written successfully!")
+
+def display_records(filename):
+    try:
+        with open(filename, 'r') as file:
+            reader = csv.reader(file)
+            for row in reader:
+                print(f"Roll No: {row[0]}, Name: {row[1]}, Address: {row[2]}")
+    except FileNotFoundError:
+        print("No records found!")
+
+filename = "student.csv"
+while True:
+    print("\nStudent CSV Management System")
+    print("1. Write Records to CSV")
+    print("2. Display Records from CSV")
+    print("3. Exit")
+    choice = input("Enter your choice: ")
+
+    if choice == '1':
+        write_records(filename)
+    elif choice == '2':
+        display_records(filename)
+    elif choice == '3':
+        break
+    else:
+        print("Invalid choice! Please try again.")
+
+
+2
+-- i) To display all records from FACULTY table whose Hire date is more than 05-oct-2001.
+SELECT *
+FROM FACULTY
+WHERE Hire_date > '2001-10-05';
+
+-- ii) To display F_ID, Fname, Cname of those faculties who charged more than 15000 as fees.
+SELECT F.F_ID, F.Frame, C.Cname
+FROM FACULTY F
+JOIN COURSES C ON F.F_ID = C.F_ID
+WHERE C.Fees > 15000;
+
+-- iii) Display count of all records from COURSES table grouped by F_ID.
+SELECT F_ID, COUNT(*) AS Total_Courses
+FROM COURSES
+GROUP BY F_ID;
+
+-- iv) Display all records FACULTY table order by First Name of the faculty in descending order.
+SELECT *
+FROM FACULTY
+ORDER BY Frame DESC;
+
+
+
+
+
+
+
+
+
+
+SET1
+-- COMPANY Table
+CREATE TABLE COMPANY (
+    CID INT PRIMARY KEY,
+    CNAME VARCHAR(50) NOT NULL,
+    CITY VARCHAR(50),
+    PRODUCTNAME VARCHAR(50)
+);
+
+-- CUSTOMER Table
+CREATE TABLE CUSTOMER (
+    CUSTID INT PRIMARY KEY,
+    NAME VARCHAR(50) NOT NULL,
+    PRICE DECIMAL(10, 2),
+    QTY INT,
+    CID INT,
+    FOREIGN KEY (CID) REFERENCES COMPANY(CID)
+);
+
+SET2
+-- TEACHER Table
+CREATE TABLE TEACHER (
+    CODE INT PRIMARY KEY,
+    TNAME VARCHAR(50) NOT NULL,
+    SUBJECT VARCHAR(50),
+    DOJ DATE,
+    PERIOD INT,
+    EXPERIENCE INT
+);
+
+-- ADMIN Table
+CREATE TABLE ADMIN (
+    CODE INT PRIMARY KEY,
+    GENDER VARCHAR(10),
+    DESIGNATION VARCHAR(50),
+    FOREIGN KEY (CODE) REFERENCES TEACHER(CODE)
+);
+
+SET3
+-- FACULTY Table
+CREATE TABLE FACULTY (
+    F_ID INT PRIMARY KEY,
+    Frame VARCHAR(50) NOT NULL,  -- Assuming "Frame" is a typo for "Fname" but kept as per the question
+    Lname VARCHAR(50),
+    Hire_date DATE,
+    Salary DECIMAL(10, 2)
+);
+
+-- COURSES Table
+CREATE TABLE COURSES (
+    C_ID VARCHAR(10) PRIMARY KEY,
+    F_ID INT,
+    Cname VARCHAR(50),
+    Fees DECIMAL(10, 2),
+    FOREIGN KEY (F_ID) REFERENCES FACULTY(F_ID)
+);
