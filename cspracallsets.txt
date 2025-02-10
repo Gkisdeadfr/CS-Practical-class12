@@ -287,3 +287,59 @@ CREATE TABLE COURSES (
     Fees DECIMAL(10, 2),
     FOREIGN KEY (F_ID) REFERENCES FACULTY(F_ID)
 );
+
+1 
+INSERT INTO COMPANY (CID, CNAME, CITY, PRODUCTNAME) VALUES
+(111, 'SONY', 'DELHI', 'TV'),
+(222, 'NOKIA', 'MUMBAI', 'MOBILE'),
+(333, 'ONIDA', 'DELHI', 'TV'),
+(444, 'SONY', 'MUMBAI', 'MOBILE'),
+(555, 'BLACKBERRY', 'MADRAS', 'MOBILE'),
+(666, 'DELL', 'DELHI', 'LAPTOP');
+
+INSERT INTO CUSTOMER (CUSTID, NAME, PRICE, QTY, CID) VALUES
+(101, 'Rohan Sharma', 70000, 20, 222),
+(102, 'Deepak Kumar', 50000, 10, 666),
+(103, 'Mohan Kumar', 30000, 5, 111),
+(104, 'Sahil Bansal', 35000, 3, 333),
+(105, 'Neha Soni', 25000, 7, 444),
+(106, 'Sonal Aggarwal', 20000, 5, 333),
+(107, 'Arjun Singh', 50000, 15, 666);
+
+2
+
+INSERT INTO TEACHER (CODE, TNAME, SUBJECT, DOJ, PERIOD, EXPERIENCE) VALUES
+(1001, 'RAVI SHANKAR', 'ENG', '2000-03-12', 24, 10),
+(1009, 'PRIYA RAI', 'PHYSICS', '1998-09-03', 26, 12),
+(1203, 'LISA ANAND', 'ENGLISH', '2000-04-09', 27, 5),
+(1045, 'YASHRAJ', 'MATHS', '2000-08-24', 24, 15),
+(1123, 'GAGAN', 'PHYSICS', '1999-07-16', 28, 3),
+(1167, 'HARISH B', 'CHEMISTRY', '1999-10-19', 27, 5),
+(1215, 'UMESH', 'PHYSICS', '1998-05-11', 22, 16);
+
+INSERT INTO ADMIN (CODE, GENDER, DESIGNATION) VALUES
+(1001, 'MALE', 'VICE PRINCIPAL'),
+(1009, 'FEMALE', 'COORDINATOR'),
+(1203, 'FEMALE', 'COORDINATOR'),
+(1045, 'MALE', 'HOD'),
+(1123, 'MALE', 'SENIOR TEACHER'),
+(1215, 'MALE', 'HOD'),
+(1167, 'FEMALE', 'SENIOR TEACHER');
+
+3
+INSERT INTO FACULTY (F_ID, Fname, Lname, Hire_date, Salary) VALUES
+(102, 'Amit', 'Mishra', '1998-10-12', 12000),
+(103, 'Nitin', 'Vyas', '1994-12-24', 8000),
+(104, 'Rakshit', 'Soni', '2001-05-18', 14000),
+(105, 'Rashmi', 'Malhotra', '2004-11-09', 11000),
+(106, 'Sulekha', 'Srivastava', '2006-06-05', 10000),
+(107, 'Niranjan', 'Kumar', '1996-08-26', 16000);
+
+INSERT INTO COURSES (C_ID, F_ID, Cname, Fees) VALUES
+('C21', 102, 'Grid Computing', 40000),
+('C22', 106, 'System Design', 16000),
+('C23', 104, 'Computer Security', 8000),
+('C24', 106, 'Human Biology', 15000),
+('C25', 102, 'Computer Network', 20000),
+('C26', 105, 'Visual Basic', 6000),
+('C27', 107, 'Dreamweaver', 4000);
